@@ -33,13 +33,9 @@ public class Main {
 		double[][] inputs = { { 9, 50 }, { 130, 20 }, { 110, 130 }, { 90, 100 } };
 		double[] expecteds = { 1, 1, -1, -1 };
 		Perceptron perceptron = new Perceptron(inputs[0].length);
-		int e = -1;
 		while (!perceptron.isAccurate(inputs, expecteds)) {
-			e++;
 			perceptron.train(inputs, expecteds, 0.1);
 		}
-
-		System.out.println("Took " + e + " epochs.");
 		
 		int width = 400;
 		int height = 400;
